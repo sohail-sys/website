@@ -12,11 +12,18 @@ collapsibles.forEach((item) =>
 
 function playVideo() {
     const video = document.getElementById('video');
-    
-    // Show the video and play it
-    video.style.display = 'block';
-    video.play();
-  }
+    const videoIcon = document.querySelector('.video-icon');
+
+    if (video.paused) {
+        // Hide the play icon and play the video
+        videoIcon.style.display = 'none';
+        video.play();
+    } else {
+        // Show the play icon and pause the video
+        video.pause();
+        videoIcon.style.display = 'block';
+    }
+}
 
 
 //   contact us
