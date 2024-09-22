@@ -52,25 +52,30 @@
           </p>
         </div>
         <div class="contact-form">
-          <h3>Contact Us</h3>
-          <form action="thankyou.html" method="get"> <!-- Change action to your thank you page -->
-            <div class="row">
-              <input type="text" placeholder="First Name" class="half-width" required />
-              <input type="text" placeholder="Last Name" class="half-width" required />
-            </div>
-            <div class="row">
-              <input type="email" placeholder="Business Email" class="half-width" required />
-              <input type="text" placeholder="Company" class="half-width" required />
-            </div>
-            <select id="country-select" required>
-              <option value="">Select Country</option>
-            </select>
-            <button type="submit">
-              <img src="Assests/mdi_send.png" alt="Send Icon" class="icon" />
-              Submit
-            </button>
-          </form>
+    <h3>Contact Us</h3>
+    <form id="contactForm" action="thankyou.html" method="get">
+        <div class="row">
+            <input type="text" placeholder="First Name" class="half-width" required />
+            <div class="error-message" id="firstNameError"></div>
+            <input type="text" placeholder="Last Name" class="half-width" required />
+            <div class="error-message" id="lastNameError"></div>
         </div>
+        <div class="row">
+            <input type="email" placeholder="Business Email" class="half-width" required />
+            <div class="error-message" id="emailError"></div>
+            <input type="text" placeholder="Company" class="half-width" required />
+            <div class="error-message" id="companyError"></div>
+        </div>
+        <select id="country-select" required>
+            <option value="">Select Country</option>
+        </select>
+        <div class="error-message" id="countryError"></div>
+        <button type="submit">
+            <img src="Assests/mdi_send.png" alt="Send Icon" class="icon" />
+            Submit
+        </button>
+    </form>
+</div>
       </section>
       <div class="shadyimage">
         <img class="one" src="Assests/Rectangle 2.1.png" alt="">
@@ -259,48 +264,57 @@
         
     <section class="main-sec">
       <div class="finalvid">
-          <div class="mobile-section">
-              <div class="content-section">
-                  <h1 class="main-title"><span>WATCH</span> THE VIDEO</h1>
-                  <div class="small-section">
-                      <div class="check">
-                          <img src="Assests/Checkmark.png" alt="">
-                          <h2 class="small-title">Need Assessment </h2>
-                      </div>
-                      <p class="small-paragraph">The Advocacy Evaluation Toolkit contains the instruments used to collect data for evaluating the Consumer Voices for Coverage program.</p>
-                  </div>
-                  <div class="small-section">
-                      <div class="check">
-                          <img src="Assests/Checkmark.png" alt="">
-                          <h2 class="small-title">Insurance Advocacy</h2>
-                      </div>
-                      <p class="small-paragraph">We are committed to advocating for appropriate coverage and payment policies.</p>
-                  </div>
-                  <div class="small-section">
-                      <div class="check">
-                          <img src="Assests/Checkmark.png" alt="">
-                          <h2 class="small-title">Treatment Planning & Placement</h2>
-                      </div>
-                      <p class="small-paragraph">Patients can better understand medical procedures, discharge instructions, etc.</p>
-                  </div>
-
+        <div class="mobile-section">
+          <div class="content-section">
+            <h1 class="main-title"><span>WATCH</span> THE VIDEO</h1>
+            <div class="small-section">
+              <div class="check">
+                <img src="Assests/Checkmark.png" alt="">
+                <h2 class="small-title">Need Assessment</h2>
               </div>
-
-          </div>
-  
-          <div class="video-section">
-              <div class="video-wrapper">
-                  <!-- Custom Play Icon -->
-                  <img class="video-icon" src="Assests/Group 44.png" alt="Play Video" onclick="playVideo()" />
-                  <!-- Video element, no controls initially -->
-                  <video id="video" style="display: block; width: 100%;" controls>
-                      <source src="Assests/video.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                  </video>
+              <p class="small-paragraph">The Advocacy Evaluation Toolkit contains the instruments used to collect data for evaluating the Consumer Voices for Coverage program.</p>
+            </div>
+            <div class="small-section">
+              <div class="check">
+                <img src="Assests/Checkmark.png" alt="">
+                <h2 class="small-title">Insurance Advocacy</h2>
               </div>
+              <p class="small-paragraph">We are committed to advocating for appropriate coverage and payment policies.</p>
+            </div>
+            <div class="small-section">
+              <div class="check">
+                <img src="Assests/Checkmark.png" alt="">
+                <h2 class="small-title">Treatment Planning & Placement</h2>
+              </div>
+              <p class="small-paragraph">Patients can better understand medical procedures, discharge instructions, etc.</p>
+            </div>
           </div>
+        </div>
+    
+        <!-- Thumbnail and Play Icon -->
+        <div class="video-section">
+          <div class="video-wrapper">
+            <div class="image-overlay" id="imageOverlay">
+              <img class="thumbnail-image" src="Assests/image 2.1.png" alt="Video Thumbnail">
+              <img class="video-icon" src="Assests/Group 44.png" alt="Play Video" onclick="showVideoModal()" />
+              
+              <!-- New image element for bottom center positioning -->
+              <img class="bottom-image" src="Assests/Vector.png" alt="Bottom Image">
+            </div>
+          </div>
+        </div>
+    
+        <!-- Modal for Video Popup -->
+        <div id="videoModal" class="video-modal">
+          <div class="modal-content">
+            <video id="video" controls>
+              <source src="Assests/video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
       </div>
-  </section>
+    </section>
   
 
 

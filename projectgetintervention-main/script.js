@@ -1,3 +1,7 @@
+
+
+
+
 const collapsibles = document.querySelectorAll(".collapsible");
 collapsibles.forEach((item) =>
   item.addEventListener("click", function () {
@@ -7,35 +11,24 @@ collapsibles.forEach((item) =>
 
 
 
-// video
-
-
-function playVideo() {
+// Video popup functionality
+function showVideoModal() {
+    const modal = document.getElementById('videoModal');
     const video = document.getElementById('video');
-    const videoIcon = document.querySelector('.video-icon');
 
-    if (video.paused) {
-        // Hide the play icon and play the video
-        videoIcon.style.display = 'none';
-        video.play();
-    } else {
-        // Show the play icon and pause the video
-        video.pause();
-        videoIcon.style.display = 'block';
-    }
+    // Show the modal
+    modal.style.display = 'flex';
+
+    // Play the video when the modal opens
+    video.play();
 }
 
 
-//   contact us
-function handleSubmit(event) {
-    event.preventDefault(); // Prevent the default form submission
 
-    // Display the thank-you message
-    document.getElementById('thankYouMessage').style.display = 'block';
-
-    // Optionally, you can clear the form fields
-    document.getElementById('contactForm').reset();
-  }
+// Ensure the close button works
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.close-btn').addEventListener('click', closeVideoModal);
+});
 
 
 
@@ -104,3 +97,9 @@ document.getElementById('prevBtn').addEventListener('click', () => {
 
 // Initialize with the first testimonial
 updateTestimonial();
+
+
+
+// error message for form
+
+
